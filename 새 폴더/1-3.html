@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<h1>회문검사기</h1>
+		<div>
+			<input type="text" v-model="message">
+			<button v-on:click="getResult">확인하기</button>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: ''
+			},
+			methods: {
+				getResult() {
+					if (this.message.length === 0) {
+						alert('입력값이 없다!')
+					} else if (this.message === [...this.message].reverse().join('')) {
+						alert('회문임')
+					} else {
+						alert('회문아님')
+					}
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

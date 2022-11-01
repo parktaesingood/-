@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<a href="url">네이버</a>
+
+
+  	<h1> 첫 입력 : {{ word1 }}</h1>
+  	<input type="text" v-model="word1">
+
+  	<h1> 두번째 입력 : {{ word2 }}</h1>
+  	<input type="text" v-model="word2">
+  
+  	<h1> 합산 입력 : {{ combineWord }}</h1>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+ 
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Heoradfadfs',
+						url : 'https://www.naver.com',
+						word1: '',
+						word2: '',
+        },
+				// 계산된 결과값이 필요할 때 사용하는 옵션 : computed
+				computed: {
+					combineWord() {
+						return this.word1 + this.word2
+					}
+				}
+    })
+  </script>
+</body>
+</html>
