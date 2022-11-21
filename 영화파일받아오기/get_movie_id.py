@@ -7,7 +7,7 @@ def get_movie_datas():
     actor_data = []
 
     
-    for i in range(1,2):
+    for i in range(3,8):
         request_url = f"https://api.themoviedb.org/3/movie/popular?api_key=fc4061dbc8efeb36b5ca0d5006427fd4&language=ko-KR&page={i}"
         movies = requests.get(request_url).json()
         # print(movies)
