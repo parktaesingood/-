@@ -7,13 +7,14 @@ def get_movie_datas():
     actor_data = []
 
     
-    for i in range(3,8):
+    for i in range(3,25):
         request_url = f"https://api.themoviedb.org/3/movie/popular?api_key=fc4061dbc8efeb36b5ca0d5006427fd4&language=ko-KR&page={i}"
         movies = requests.get(request_url).json()
         # print(movies)
 
         for movie in movies['results']:
-            total_data.append(movie['id'])
+            if movie['backdrop_path'] != None: 
+                total_data.append(movie['id'])
     
     # return total_data
     
